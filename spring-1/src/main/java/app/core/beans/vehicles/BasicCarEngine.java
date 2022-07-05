@@ -1,8 +1,10 @@
 package app.core.beans.vehicles;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class BasicCarEngine implements Engine {
 
 	@Override

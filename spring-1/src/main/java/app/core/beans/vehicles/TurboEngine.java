@@ -1,5 +1,8 @@
 package app.core.beans.vehicles;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TurboEngine implements Engine {
 
 	@Override
