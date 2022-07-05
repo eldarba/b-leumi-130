@@ -1,4 +1,4 @@
-package a;
+package a.initializers;
 
 public class Person {
 
