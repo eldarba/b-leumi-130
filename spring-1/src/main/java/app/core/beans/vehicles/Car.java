@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Car implements Vehicle {
-	// DI
+	// DI - Dependency Injection 
 	@Autowired
 	private Engine engine;
 
