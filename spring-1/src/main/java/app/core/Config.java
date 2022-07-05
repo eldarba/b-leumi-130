@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Scope;
 
 import app.core.beans.Point;
 
-@ComponentScan
-@Configuration
+//@ComponentScan
+//@Configuration
 public class Config {
 
 	// add bean definitions here
