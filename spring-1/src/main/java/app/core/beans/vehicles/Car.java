@@ -33,4 +33,10 @@ public class Car implements Vehicle {
 		System.out.println("car stopped");
 	}
 
+	public int getMaxSpeed() {
+		return maxSpeed;
+	}
+	
+	
+
 }
