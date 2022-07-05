@@ -1,5 +1,6 @@
 package app.core;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -36,8 +37,8 @@ public class SpringApp2 {
 	}
 
 	@Bean
-	public Car turboCar() {
-		Car car = new Car(new TurboEngine(), 0);
+	public Car turboCar(@Value("${car.max.speed.turbo}") int maxSpeed) {
+		Car car = new Car(new TurboEngine(), maxSpeed);
 		return car;
 	}
 
