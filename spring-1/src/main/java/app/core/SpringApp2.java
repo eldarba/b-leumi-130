@@ -20,6 +20,8 @@ public class SpringApp2 {
 			Vehicle vehicle = ctx.getBean(Vehicle.class);
 			vehicle.move();
 			vehicle.stop();
+			
+			System.out.println("=================");
 
 			Vehicle carTurbo = ctx.getBean("turboCar", Vehicle.class);
 			carTurbo.move();

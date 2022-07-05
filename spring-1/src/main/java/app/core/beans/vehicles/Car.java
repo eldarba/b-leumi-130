@@ -1,7 +1,6 @@
 package app.core.beans.vehicles;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +12,12 @@ public class Car implements Vehicle {
 	// @Autowired
 	// @Qualifier("turboEngine")
 	private Engine engine;
+	private int maxSpeed;
 
-	
-	public Car(Engine engine) {
+	public Car(Engine engine, @Value("${car.max.speed}") int maxSpeed) {
 		super();
 		this.engine = engine;
+		this.maxSpeed = maxSpeed;
 	}
 
 	@Override
