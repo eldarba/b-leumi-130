@@ -9,8 +9,8 @@ public class Administrator {
 		System.out.println("Hello from admin");
 	}
 
-	public void addUser() {
-		System.out.println("adding user");
+	public void addUser(int id) {
+		System.out.println("adding user: " + id);
 	}
 
 	public void addManager() {

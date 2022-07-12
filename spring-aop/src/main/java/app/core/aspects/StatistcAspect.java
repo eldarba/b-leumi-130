@@ -1,5 +1,6 @@
 package app.core.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -26,7 +27,14 @@ public class StatistcAspect {
 	// 5. parameter pattern [mandatory]
 	// 6. throw pattern
 	@Before("execution(* add*(..))")
-	public void countAddMethodsCall() {
+	public void countAddMethodsCall(JoinPoint jp) { // get access to joinpoint
+		// get arguments
+		Object[] args = jp.getArgs();
+		if (args.length > 0) {
+			System.out.println(args[0].getClass());
+		}
+		// get method name
+		System.out.println(">>> stat: " + jp.getSignature().getName());
 		counter++;
 	}
 }
