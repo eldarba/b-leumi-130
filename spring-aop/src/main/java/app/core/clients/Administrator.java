@@ -13,7 +13,7 @@ public class Administrator {
 		System.out.println("adding user: " + id);
 	}
 
-	public void addManager() {
+	public void addManager(Manager manager) {
 		System.out.println("adding manager");
 	}
 

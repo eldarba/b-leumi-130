@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import app.core.aspects.StatistcAspect;
 import app.core.clients.Administrator;
 import app.core.clients.Customer;
+import app.core.clients.Manager;
 
 public class App1 {
 
@@ -18,7 +19,7 @@ public class App1 {
 
 			admin.greet();
 			customer.addCustomer();
-			admin.addManager();
+			admin.addManager(new Manager());
 			admin.greet();
 			admin.addUser(5);
 			customer.addCustomer();
