@@ -13,10 +13,12 @@ public class App1 {
 
 			Calculator calculator = ctx.getBean("calc1", Calculator.class);
 			int a = 25;
-			int b = 0;
+			int b = 5;
 
 			String res = calculator.divide(a, b);
 			System.out.println(res);
+
+			calculator.greet();
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());

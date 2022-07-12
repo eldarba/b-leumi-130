@@ -4,4 +4,6 @@ public interface Calculator {
 
 	String divide(int a, int b) throws RuntimeException;
 
+	String greet();
+
 }

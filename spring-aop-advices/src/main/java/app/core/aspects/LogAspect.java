@@ -56,10 +56,20 @@ public class LogAspect {
 		}
 	}
 
-	// pointcut definitions:
+	// pointcut definition:
 	@Pointcut("execution(String divide(int, int) )")
 	public void div() {
 
+	}
+
+	// annotations pointcut
+	@Pointcut("@annotation(app.core.annotations.MyLogAnnotation)")
+	public void annotated() {
+	};
+
+	@Before("annotated()")
+	public void beforeAnnotated(JoinPoint jp) {
+		System.out.println("@@@@@@@@ annotated method: " + jp.getSignature().getName());
 	}
 
 }
