@@ -13,11 +13,10 @@ public class App1 {
 
 			Calculator calculator = ctx.getBean(Calculator.class);
 			int a = 25;
-			int b = 0;
+			int b = 4;
 
 			String res = calculator.divide(a, b);
 
-			System.out.println(res);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}

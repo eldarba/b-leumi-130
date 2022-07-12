@@ -7,7 +7,9 @@ public class CalculatorImpl implements Calculator {
 
 	@Override
 	public String divide(int a, int b) throws RuntimeException {
-		return a + " : " + b + " = " + (a / b) + " [remainder: " + (a % b) + "]";
+		String res = a + " : " + b + " = " + (a / b) + " [remainder: " + (a % b) + "]";
+		System.out.println(res);
+		return res;
 	}
 
 }
