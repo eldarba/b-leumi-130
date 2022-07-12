@@ -26,7 +26,20 @@ public class LoggingAspect {
 		System.out.println("************ method " + methodName + " acccepts Manager argument");
 	}
 
+	@Before("clientsPackage()")
+	public void clients(JoinPoint jp) {
+		String methodName = jp.getSignature().getName();
+		System.out.println("-------- method " + methodName + " is in clients package");
+	}
+
 	// pointcut declarations
+
+	// all methods in package: app.core.clients
+	@Pointcut("execution(* app.core.clients.*.*(..))")
+	public void clientsPackage() {
+
+	}
+
 	@Pointcut("execution(* *(.., app.core.clients.Manager, ..))")
 	public void managerArg() {
 
