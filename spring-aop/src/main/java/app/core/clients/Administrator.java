@@ -9,4 +9,12 @@ public class Administrator {
 		System.out.println("Hello from admin");
 	}
 
+	public void addUser() {
+		System.out.println("adding user");
+	}
+
+	public void addManager() {
+		System.out.println("adding manager");
+	}
+
 }

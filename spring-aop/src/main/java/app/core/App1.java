@@ -12,6 +12,7 @@ public class App1 {
 		try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);) {
 			// start asking the container for beans
 			Administrator admin = ctx.getBean(Administrator.class);
+			System.out.println(admin.getClass());
 			admin.greet();
 		}
 

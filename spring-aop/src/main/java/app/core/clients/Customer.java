@@ -9,4 +9,8 @@ public class Customer {
 		System.out.println("Hello from customer");
 	}
 
+	public void addCustomer() {
+		System.out.println("adding customer");
+	}
+
 }
