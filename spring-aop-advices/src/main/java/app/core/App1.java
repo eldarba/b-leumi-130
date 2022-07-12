@@ -11,11 +11,12 @@ public class App1 {
 		// create a spring container here
 		try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);) {
 
-			Calculator calculator = ctx.getBean(Calculator.class);
+			Calculator calculator = ctx.getBean("calc1", Calculator.class);
 			int a = 25;
-			int b = 4;
+			int b = 0;
 
 			String res = calculator.divide(a, b);
+			System.out.println(res);
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
