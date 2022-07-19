@@ -16,7 +16,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 	Book x1(int id);
 
 	// JPQL QUERY
-	@Query("from Book where Book.id=:id")
+	@Query("from Book where id=:id")
 	Book x2(int id);
 
 }
