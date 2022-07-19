@@ -8,6 +8,7 @@ import app.core.entities.Employee;
 
 // @Component
 public class App1 implements CommandLineRunner {
+
 	@Autowired
 	private EmployeeDAO dao;
 
