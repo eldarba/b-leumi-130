@@ -62,14 +62,28 @@ public class LogAspect {
 
 	}
 
-	// annotations pointcut
+	// ANNOTATIONS ON METHOD
+	// pointcut
 	@Pointcut("@annotation(app.core.annotations.MyLogAnnotation)")
-	public void annotated() {
+	public void annotatedMethod() {
 	};
 
-	@Before("annotated()")
-	public void beforeAnnotated(JoinPoint jp) {
+	// advice
+	@Before("annotatedMethod()")
+	public void beforeAnnotatedMethod(JoinPoint jp) {
 		System.out.println("@@@@@@@@ annotated method: " + jp.getSignature().getName());
+	}
+
+	// ANNOTATIONS ON CLASS
+	// pointcut
+	@Pointcut("@target(app.core.annotations.MyLogAnnotation)")
+	public void annotatedClass() {
+	};
+
+	// advice
+	@Before("annotatedClass()")
+	public void beforeAnnotatedClass(JoinPoint jp) {
+		System.out.println("@@@@@@@@ method in annotated class: " + jp.getSignature().getName());
 	}
 
 }
