@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Schools</title>
+</head>
+<body>
+    <h1>School</h1>
+    <input id="school-id" type="text" placeholder="enter school id">
+    <br>
+    <button onclick="find()">find</button>
+    <fieldset>
+        <legend>response</legend>
+        <div id="resp"></div>
+    </fieldset>
+
+    <script>
+        function find() {
+            document.getElementById("resp").innerHTML="";
+            const xhttp = new XMLHttpRequest();
+            const schoolId = document.getElementById("school-id").value;
+            xhttp.onload = function () {
+                // console.log(this.response);
+                if(this.status===200){
+                    document.getElementById("resp").innerHTML=this.response;
+                }else{
+                    const err = JSON.parse(this.response) ;
+                    console.dir(err);
+                    alert(err.message);
+                }
+            }
+            xhttp.open("GET", "http://localhost:8080/api/school?id=" + schoolId);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

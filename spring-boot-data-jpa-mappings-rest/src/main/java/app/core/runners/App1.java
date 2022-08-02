@@ -26,14 +26,14 @@ public class App1 implements CommandLineRunner {
 	}
 
 	void doUpdateSchoole() {
-		School school = this.service.getSchoole(1);
+		School school = this.service.getSchool(1);
 		school.setName("The New School");
 		school.getAddress().setCity("Haifa");
 		service.updateSchool(school);
 	}
 
 	void doGetSchool(int id) {
-		School school = this.service.getSchoole(id);
+		School school = this.service.getSchool(id);
 		System.out.println(school);
 		System.out.println(school.getAddress());
 	}

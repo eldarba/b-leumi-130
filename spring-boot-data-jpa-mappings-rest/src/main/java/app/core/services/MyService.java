@@ -25,7 +25,7 @@ public class MyService {
 	}
 
 	// fetch school (will also fetch the address)
-	public School getSchoole(int id) {
+	public School getSchool(int id) {
 		return schoolRepository.findById(id).orElseThrow(() -> new RuntimeException("getSchoole failed - not found"));
 	}
 
@@ -37,6 +37,10 @@ public class MyService {
 			throw new RuntimeException("updateSchool failed - not exists: " + school.getId());
 		}
 	}
+
 	// delete school (will also delete the address)
+	public void deletSchool(int id) {
+		this.schoolRepository.deleteById(id);
+	}
 
 }
