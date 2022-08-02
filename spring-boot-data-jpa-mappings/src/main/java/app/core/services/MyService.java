@@ -23,8 +23,20 @@ public class MyService {
 			throw new RuntimeException("createSchool failed - already exists: " + school.getId());
 		}
 	}
+
 	// fetch school (will also fetch the address)
+	public School getSchoole(int id) {
+		return schoolRepository.findById(id).orElseThrow(() -> new RuntimeException("getSchoole failed - not found"));
+	}
+
 	// update school (will also update the address)
+	public void updateSchool(School school) {
+		if (schoolRepository.existsById(school.getId())) {
+			school = schoolRepository.save(school);
+		} else {
+			throw new RuntimeException("updateSchool failed - not exists: " + school.getId());
+		}
+	}
 	// delete school (will also delete the address)
 
 }
