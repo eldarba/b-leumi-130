@@ -22,7 +22,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = { "address", "teachers" })
+@ToString(exclude = { "address", "teachers", "students" })
 @EqualsAndHashCode(of = "id")
 @Entity
 public class School {

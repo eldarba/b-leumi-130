@@ -10,14 +10,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "schools")
 @EqualsAndHashCode(of = "id")
 @Entity
 public class Student {
@@ -26,6 +30,7 @@ public class Student {
 	private int id;
 	private String name;
 
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "school_student",
 
