@@ -13,4 +13,10 @@ public class SpringRestApplication {
 		SpringApplication.run(SpringRestApplication.class, args);
 	}
 
+//	@Bean
+//	public Docket swaggerDocket() {
+//
+//		return null;
+//	}
+
 }

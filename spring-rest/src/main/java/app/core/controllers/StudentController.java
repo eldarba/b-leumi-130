@@ -1,8 +1,10 @@
 package app.core.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +25,16 @@ public class StudentController {
 	@GetMapping
 	public String getStudent() {
 		return studentServcie.getStudent(101);
+	}
+
+	@PutMapping
+	public String updateStudent() {
+		return studentServcie.updateStudent();
+	}
+
+	@DeleteMapping
+	public String deleteStudent() {
+		return studentServcie.deleteStudent();
 	}
 
 }
